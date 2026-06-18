@@ -1,0 +1,13 @@
+Langkah-Langkah menjalankan kode:
+1. Tugas 2 yaitu probabilistik model BIM,BM10,BM25, dan Two-Poisson
+    - Run Class Main.java
+    - Masukan input seperti dibawah ini:
+        - machine learning and artificial intelligence algorithms
+        - mars exploration and solar system planets
+        - healthy food vitamins and balanced diet
+        - electric cars battery charging range
+        - internet protocols and early computers
+    - Hasil Bisa dilihat
+2. Tugas 3 yaitu evaluasi model dengan Precision,Recall,Precision At K, 11-point precision average
+    - Run Class EvaluasiModel.java
+    - Hasil bisa langsung dilihat dengan 5 input yang sama seperti pada Tugas 2

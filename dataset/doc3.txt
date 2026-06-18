@@ -1,0 +1,1 @@
+Neural networks are designed to mimic the human brain.

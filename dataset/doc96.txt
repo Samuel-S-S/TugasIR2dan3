@@ -1,0 +1,1 @@
+Moore's Law observed that transistor counts double every two years.

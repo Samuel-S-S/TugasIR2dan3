@@ -1,0 +1,1 @@
+Battery degradation over time reduces the maximum driving range.

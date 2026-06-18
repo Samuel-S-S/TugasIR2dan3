@@ -1,0 +1,1 @@
+Reinforcement learning relies on a system of rewards and penalties.

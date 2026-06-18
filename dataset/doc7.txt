@@ -1,0 +1,1 @@
+Computer vision enables autonomous systems to recognize objects.
