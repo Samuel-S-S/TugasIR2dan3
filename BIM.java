@@ -8,10 +8,18 @@ public class BIM {
         for (Integer docId : index.docs.keySet()) {
             double score = 0.0;
             Map<String, Integer> docTf = index.tf.get(docId);
+            
             for (String term : qTokens) {
                 if (docTf.containsKey(term) && docTf.get(term) > 0) {
                     double docFreq = index.df.getOrDefault(term, 0);
-                    double wt = Math.log((index.N - docFreq + 0.5) / (docFreq + 0.5) + 1.0);
+                    
+                    double R = 0.0;
+                    double rt = 0.0;
+                    
+                    double num = (rt + 0.5) * (index.N - R + 1.0);
+                    double den = (R + 1.0) * (docFreq - rt + 0.5);
+                    double wt = Math.log10(num / den);
+                    
                     score += wt;
                 }
             }

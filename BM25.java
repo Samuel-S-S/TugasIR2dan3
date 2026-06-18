@@ -13,12 +13,19 @@ public class BM25 {
             for (String term : qTokens) {
                 if (docTf.containsKey(term)) {
                     double termFreq = docTf.get(term);
-                    double docFreq = index.df.getOrDefault(term, 0);
                     if (termFreq > 0) {
-                        double wt = Math.log((index.N - docFreq + 0.5) / (docFreq + 0.5) + 1.0);
-                        double num = termFreq * (k1 + 1) * wt;
-                        double den = termFreq + k1 * (1 - b + b * (dl / index.avgdl));
-                        score += num / den;
+                        double docFreq = index.df.getOrDefault(term, 0);
+                        
+                        double R = 0.0;
+                        double rt = 0.0;
+                        
+                        double num = (rt + 0.5) * (index.N - R + 1.0);
+                        double den = (R + 1.0) * (docFreq - rt + 0.5);
+                        double wt = Math.log10(num / den);
+                        
+                        double numBM = termFreq * (k1 + 1) * wt;
+                        double denBM = termFreq + k1 * (1 - b + b * (dl / index.avgdl));
+                        score += numBM / denBM;
                     }
                 }
             }
